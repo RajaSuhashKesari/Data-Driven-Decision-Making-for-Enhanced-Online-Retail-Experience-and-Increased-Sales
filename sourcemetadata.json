@@ -1,4 +1,6 @@
 [
 {"ls_pr_base_url":"mayank953/BigDataProjects/refs/heads/main/Project-Brazillian%20Ecommerce/Data/",
-"file_names":["olist_customers_dataset.csv","olist_geolocation_dataset.csv","olist_order_items_dataset.csv","olist_order_reviews_dataset.csv","olist_orders_dataset.csv","olist_products_dataset.csv","olist_sellers_dataset.csv"]}
+"file_names":["olist_customers_dataset.csv","olist_geolocation_dataset.csv","olist_order_items_dataset.csv","olist_order_reviews_dataset.csv","olist_orders_dataset.csv","olist_products_dataset.csv","olist_sellers_dataset.csv"]},
+
+"mysql_table_name":"olist_order_payments_dataset"
 ]
