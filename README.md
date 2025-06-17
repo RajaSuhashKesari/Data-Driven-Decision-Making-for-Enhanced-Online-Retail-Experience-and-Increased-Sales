@@ -3,13 +3,10 @@
 ## 1. Implemented Batch Processing in Azure Data Engineering Services for Online Retails Dataset.
 ![image](https://github.com/user-attachments/assets/30048bbe-f7a9-454c-9270-10dd4c464b6b)
 
-## Overall Batch processing architecture:-
 ![image](https://github.com/user-attachments/assets/d7a1e7ec-70f8-4b4e-8a24-2c345c1e513d)
 
 ## Medallion Architecture :-
-#### ->The Medallion architecture structures data in a multi-tier approach —bronze, silver and gold tier— taking
-into account and encouraging data quality as it moves through the transformation process (from raw data
-to valuable business insights).
+The Medallion architecture structures data in a multi-tier approach —bronze, silver and gold tier— taking into account and encouraging data quality as it moves through the transformation process (from raw data to valuable business insights).
 ![image](https://github.com/user-attachments/assets/7bf87a8d-1cdd-4324-a9e0-a2db07032f73)
 ###### 1. Bronze layer: This phase marks the input of raw data, which is stored as it is collected, usually from a variety
 of sources and in formats such as CSV or JSON. The data is usually raw data and varies in quality and
@@ -25,7 +22,7 @@ sources for deeper insights.
 Brazilian E-Commerce Public Dataset by Olist:-Welcome! This is a Brazilian ecommerce public
 dataset of orders made at Olist Store. The dataset has informa􀆟on of 100k orders from 2016 to
 2018 made at muliple marketplaces in Brazil. Its features allows viewing an order from
-mul􀆟ple dimensions: from order status, price, payment and freight performance to customer
+multiple dimensions: from order status, price, payment and freight performance to customer
 location, product atributes and finally reviews written by customers. We also released a
 geoloca􀆟on dataset that relates Brazilian zip codes to lat/lng coordinates.
 Datasets and its details:-
