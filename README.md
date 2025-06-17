@@ -4,28 +4,29 @@
 ![image](https://github.com/user-attachments/assets/30048bbe-f7a9-454c-9270-10dd4c464b6b)
 
 ## Overall Batch processing architecture:-
-![image](https://github.com/user-attachments/assets/bb7d78e4-a230-43a9-9641-7755aa1072d0)
+![image](https://github.com/user-attachments/assets/d7a1e7ec-70f8-4b4e-8a24-2c345c1e513d)
+
 ## Medallion Architecture :-
 #### ->The Medallion architecture structures data in a multi-tier approach —bronze, silver and gold tier— taking
 into account and encouraging data quality as it moves through the transformation process (from raw data
 to valuable business insights).
 ![image](https://github.com/user-attachments/assets/7bf87a8d-1cdd-4324-a9e0-a2db07032f73)
-1. Bronze layer: This phase marks the input of raw data, which is stored as it is collected, usually from a variety
+###### 1. Bronze layer: This phase marks the input of raw data, which is stored as it is collected, usually from a variety
 of sources and in formats such as CSV or JSON. The data is usually raw data and varies in quality and
 structure.
-2. Silver layer: At this point, the data is processed and transformed to achieve cleaner, more structured data.
+###### 2. Silver layer: At this point, the data is processed and transformed to achieve cleaner, more structured data.
 Tasks such as filtering, validation and normalisation of the data are carried out and stored in efficient
 formats. This phase may include defined schemas and additional metadata.
-3. Gold layer: This stage contains data already prepared for analysis and business use. In the Gold layer,
+###### 3. Gold layer: This stage contains data already prepared for analysis and business use. In the Gold layer,
 advanced transformations and aggregations are performed to create rich data sets. The data is structured,
 optimised for fast queries and can be enriched with additional information or merged with other data
 sources for deeper insights.
 ## Dataset used in this project:-
 Brazilian E-Commerce Public Dataset by Olist:-Welcome! This is a Brazilian ecommerce public
 dataset of orders made at Olist Store. The dataset has informa􀆟on of 100k orders from 2016 to
-2018 made at mul􀆟ple marketplaces in Brazil. Its features allows viewing an order from
+2018 made at muliple marketplaces in Brazil. Its features allows viewing an order from
 mul􀆟ple dimensions: from order status, price, payment and freight performance to customer
-loca􀆟on, product a􀆩ributes and finally reviews wri􀆩en by customers. We also released a
+location, product atributes and finally reviews written by customers. We also released a
 geoloca􀆟on dataset that relates Brazilian zip codes to lat/lng coordinates.
 Datasets and its details:-
 
@@ -75,23 +76,23 @@ Translates the product_category_name to english.
 ![image](https://github.com/user-attachments/assets/644a15f3-9cd6-4ce0-9d98-c601cc18e31b)
 
 ## Azure Services Required for Data Engineering:-
-1. Resource Group
-2. Azure Data Lake Storage Gen2.
-3. Azure Data Factory.
-4. Azure Databricks.
-5. Azure Synapse analytics.
+###### 1. Resource Group
+###### 2. Azure Data Lake Storage Gen2.
+###### 3. Azure Data Factory.
+###### 4. Azure Databricks.
+###### 5. Azure Synapse analytics.
 
 ## Data ingestion and Load to Bronze folder in ADLS Gen2 using ADF:-
 --Before ingestion we need to focus on the what is required to ingest.
-1. Pipeline for which will extract data from sources and load to destination.
-2. Datasets to store the metadata of the source files and to point them.
-3. Linked Services to maintain the connection between ADF and sources and destinations
+###### 1. Pipeline for which will extract data from sources and load to destination.
+###### 2. Datasets to store the metadata of the source files and to point them.
+###### 3. Linked Services to maintain the connection between ADF and sources and destinations
 ### Creating Linked services :-
 As our data required for bronze layer is in the Github and MySQL database and we have load the data to ‘Bronze’ Folder in ADLS Gen2 
 So, we required three linked services:-
-1.	Http Linked Service to connect Github.
-2.	MySQL Linked Service to Connect MySQL database.
-3.	Azure Data Lake Storage Gen2  Linked service to connected to ‘Bronze’ folder
+###### 1.	Http Linked Service to connect Github.
+###### 2.	MySQL Linked Service to Connect MySQL database.
+###### 3.	Azure Data Lake Storage Gen2  Linked service to connected to ‘Bronze’ folder
 
 #### I created three linked Services
 ###### 1.Created http linked service and  LS_for_Github as its name
@@ -104,19 +105,18 @@ So, we required three linked services:-
 ![image](https://github.com/user-attachments/assets/37c4ff0e-878c-4727-8247-15444b7030b2)
 
 #### After Creating we need 4 Datasets so I created them 
-1.	DS_MySql_order_payments :-This dataset likely refers to order payments data stored in a MySQL database.
-2.	DS_olist_bronze_csv_file:-This dataset is pointing to the location where the data is going to be loaded after ingestion .
-3.	DS_olist_source_files_csv:- This dataset is refers to the original datasets which are csv format in the Github.
-4.	DS_source_metadata_json:- This dataset is refers to the metadata file in github which contains the metadata about the source files and their locations.
+###### 1.	DS_MySql_order_payments :-This dataset likely refers to order payments data stored in a MySQL database.
+###### 2.	DS_olist_bronze_csv_file:-This dataset is pointing to the location where the data is going to be loaded after ingestion .
+###### 3.	DS_olist_source_files_csv:- This dataset is refers to the original datasets which are csv format in the Github.
+###### 4.	DS_source_metadata_json:- This dataset is refers to the metadata file in github which contains the metadata about the source files and their locations.
  ![image](https://github.com/user-attachments/assets/29e5f87d-06f4-4367-adfd-0733346145fb)
 
---we need to a pipeline which is going to ingest the data from multiple source and load them into the bronze folder so, I created a pipline which is going to ingest the data in github and Mysql table in to Azure Data Lake Storage Gen2 ‘Bronze’ folder.
+###### we need to a pipeline which is going to ingest the data from multiple source and load them into the bronze folder so, I created a pipline which is going to ingest the data in github and Mysql table in to Azure Data Lake Storage Gen2 ‘Bronze’ folder.
 ![image](https://github.com/user-attachments/assets/49af3fd5-ccda-4547-b160-2a48725e7d41)
  
 After Execution of pipeline the datasets are copied from Github and MySQL database to ‘Bronze’ folder.
 ![image](https://github.com/user-attachments/assets/427d2e76-ffc7-4dbd-aa10-9c6db36bae53)
-
- The data is successfully ingested to bronze layer using azure data factory.
+The data is successfully ingested to bronze layer using azure data factory.
 
 ## 2. Implemented Stream Processing in Azure Data Engineering Services for Online Retails Streaming Dataset.
 ![image](https://github.com/user-attachments/assets/da54ee76-0429-4700-91ac-a3a1abf61236)
