@@ -70,7 +70,7 @@ and to identify which seller fulfilled each product.
 ### 9. Category Name Translation
 Translates the product_category_name to english.
 ## Data Schema:-
-![image](https://github.com/user-attachments/assets/644a15f3-9cd6-4ce0-9d98-c601cc18e31b)
+![image](https://github.com/user-attachments/assets/d1653b9c-7271-414a-b885-dea87ea75211)
 
 ## Azure Services Required for Data Engineering:-
 ###### 1. Resource Group
